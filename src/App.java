@@ -1,6 +1,11 @@
+import java.util.Stack;
+
 import Materia.Cola;
 import Materia.ColaGenerica;
+import Materia.ListasEnlazadas.ListasEnlazadas;
 import Materia.Models.Pantallas;
+import Materia.Models.Ejercicio_01_sing.SingValidator;
+import Materia.Models.Ejercicio_02_sorting.StackSorter;
 import Materia.Pilas.PIlaGenerica;
 import Materia.Pilas.Pila;
 
@@ -69,7 +74,48 @@ public class App {
         System.out.println(" Estoy en la pantalla\t"+
                     queuegenGenerica.peek().getNombre());
         System.out.println(" la cola tiene mas "+queuegenGenerica.size()+" elemento ");
-        
 
-    }
+
+        System.out.println("_____________________________________________");
+        // ejercicio 1 
+         SingValidator validador = new SingValidator();
+
+        String input1 = "([]){}";
+        System.out.println(validador.isValid(input1));  // Output: true
+
+        String input2 = "([)]";
+        System.out.println(validador.isValid(input2));  // Output: false
+
+        String input3 = "{[]}";
+        System.out.println(validador.isValid(input3));  // Output: true
+
+        String input4 = "([)";
+        System.out.println(validador.isValid(input4));  // Output: false
+        
+        // ejercicio 2 
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(5);
+        stack.push(1);
+        stack.push(4);
+        stack.push(2);
+
+        StackSorter sorter = new StackSorter();
+        sorter.sortStack(stack);
+
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop() + " ");
+        }
+
+        ListasEnlazadas lista=new ListasEnlazadas();
+        lista.addNode(1);
+        lista.addNode(4);
+        lista.addNode(3);
+        lista.addNode(6);
+        System.out.println();
+        lista.deleteNode(1);
+        lista.print();
+        lista.deleteNode(3);
+        lista.print();
+        }
 }
