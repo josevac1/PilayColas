@@ -43,6 +43,7 @@ public class ListasEnlazadas {
         }
             
     }
+    
 
     public void print(){
         if (head==null) {

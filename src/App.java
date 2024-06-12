@@ -3,9 +3,11 @@ import java.util.Stack;
 import Materia.Cola;
 import Materia.ColaGenerica;
 import Materia.ListasEnlazadas.ListasEnlazadas;
+import Materia.ListasEnlazadas.ListasEnlazadasGenericas;
 import Materia.Models.Pantallas;
 import Materia.Models.Ejercicio_01_sing.SingValidator;
 import Materia.Models.Ejercicio_02_sorting.StackSorter;
+import Materia.Models.Ejercicio_03LinkedLists.LinkedListsEjr;
 import Materia.Pilas.PIlaGenerica;
 import Materia.Pilas.Pila;
 
@@ -113,9 +115,49 @@ public class App {
         lista.addNode(3);
         lista.addNode(6);
         System.out.println();
+        lista.deleteNode(6);
+        lista.print();
         lista.deleteNode(1);
         lista.print();
         lista.deleteNode(3);
         lista.print();
-        }
+
+        System.out.println("xxxxxxxxxxxxxx");
+        ListasEnlazadasGenericas<Integer> listaEnteros = new ListasEnlazadasGenericas<>();
+
+        // Agregar nodos a la lista
+        listaEnteros.addNode(1);
+        listaEnteros.addNode(2);
+        listaEnteros.addNode(3);
+        listaEnteros.addNode(4);
+        listaEnteros.addNode(5);
+
+        // Imprimir la lista
+        System.out.println("Lista original:");
+        listaEnteros.print();
+
+        // Eliminar un nodo de la lista
+        listaEnteros.deleteNode(2);
+
+        // Imprimir la lista después de eliminar un nodo
+        System.out.println("Lista después de eliminar 2:");
+        listaEnteros.print();
+        System.out.println("------------------------------------------------------------");
+
+        System.out.println("Ejercicio 3 ");
+
+        LinkedListsEjr listaejer = new LinkedListsEjr();
+        listaejer.addNode2(1);
+        listaejer.addNode2(2);
+        listaejer.addNode2(5);
+        listaejer.addNode2(7);
+        listaejer.addNode2(6);
+
+        int posicion = 1;
+        int resultado = listaejer.getByPoss(posicion);
+        System.out.println("El nodo en la posición " + posicion + 
+        " desde el final es: " + resultado);
+
+
+    }
 }
